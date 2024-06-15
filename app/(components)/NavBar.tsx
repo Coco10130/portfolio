@@ -61,7 +61,7 @@ const NavBar = () => {
             className={
               showNav
                 ? "absolute top-[6rem] opacity-100 left-0 w-full h-auto px-5 py-5 bg-opacity-20 text-white border-2 border-slte-600 bg-white z-10 duration-300"
-                : "absolute top-[6rem] left-[-48rem] opacity-50 w-full h-auto px-5 py-5 bg-opacity-0 text-white bg-white duration-300"
+                : "absolute top-[6rem] left-[-100%] opacity-50 w-full h-auto px-5 py-5 bg-opacity-0 text-white bg-white duration-300"
             }
           >
             <ul className="relative flex flex-row items-center justify-center w-full h-auto gap-12 font-source-serif text-lg">
