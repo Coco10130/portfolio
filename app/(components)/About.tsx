@@ -65,25 +65,25 @@ const About = () => {
       <Reveal>
         <div className="flex flex-col items-center mb-32">
           <div>
-            <h1 className="text-white font-source-serif-bold text-5xl mb-20">
+            <h1 className="text-white font-source-serif-bold text-3xl mb-12 sm:text-4xl md:text-5xl md:mb-20">
               About
             </h1>
           </div>
 
-          <div className="grid grid-cols-2 place-content-center mx-5 sm:mx-10 md:px-20 lg:mx-40">
-            <div className="flex flex-col gap-7 font-source-serif text-white">
-              <p>
+          <div className="grid grid-cols-1 gap-12 place-content-center mx-5 sm:mx-10 md:px-20 lg:mx-12 lg:grid-cols-2">
+            <div className="flex flex-col gap-7 font-source-serif text-center text-white lg:text-start">
+              <p className="description">
                 Hello, I'm John Ric Tenepere, proudly representing Aguilar,
                 Pangasinan, as I navigate the vast expanse of academia. My
                 academic journey is a deep dive into the realm of backend
                 development, with Node.js serving as my guiding light.
               </p>
-              <p>
+              <p className="description">
                 As I prepare to embark on my third year of college, I liken
                 myself to a sailor setting sail into uncharted waters, eager to
                 explore new frontiers in the field of backend development.
               </p>
-              <p>
+              <p className="description">
                 As I continue my journey of lifelong learning, I remain vigilant
                 for the latest advancements in backend development. Each new
                 technological breakthrough fuels my passion and drives me
@@ -101,7 +101,7 @@ const About = () => {
                   {technologies.map((tech) => (
                     <div
                       key={tech.tech}
-                      className="text-white px-4 py-2 rounded-full shadow-md text-sm hover:scale-x-110 duration-300 cursor-pointer font-source-serif"
+                      className="text-white px-4 py-2 rounded-full shadow-md text-sm hover:scale-x-110 duration-300 cursor-pointer font-source-serif lg:text-base"
                       style={{
                         backgroundColor:
                           hoveredTech === tech.tech ? tech.color : "gray",

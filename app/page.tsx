@@ -9,10 +9,21 @@ export default function Home() {
   return (
     <div className="bg-slate-900 w-full h-auto">
       <NavBar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
+      <div id="home">
+        <Hero />
+      </div>
+
+      <div id="about">
+        <About />
+      </div>
+
+      <div id="projects">
+        <Projects />
+      </div>
+
+      <div id="contact">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );

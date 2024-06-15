@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
- 
+@layer components {
+ .description {
+    @apply text-sm md:text-base lg:text-lg
+ }
 }
 
 html{

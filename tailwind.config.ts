@@ -12,6 +12,7 @@ const config: Config = {
         'source-serif': ['var(--font-sourceSerif)'],
         'source-serif-bold': ['var(--font-sourceSerifBold)'],
         'source-serif-semibold': ['var(--font-sourceSerifSemiBold)'],
+        'source-serif-italic': ['var(--font-sourceSerifItalic)'],
       },
 
       colors: {

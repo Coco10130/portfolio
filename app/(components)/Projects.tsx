@@ -43,11 +43,11 @@ const Projects = () => {
   ];
 
   return (
-    <div className="my-32">
+    <div className="mb-32">
       <Reveal>
         <div className="flex flex-col items-center">
           <div className="mb-20">
-            <h1 className="text-white text-center text-5xl font-source-serif-bold">
+            <h1 className="text-white text-center font-source-serif-bold text-3xl  sm:text-4xl md:text-5xl">
               My Works
             </h1>
           </div>
@@ -74,7 +74,7 @@ interface ProjectCardsProps {
 const ProjectCards = ({ projects }: ProjectCardsProps) => {
   return (
     <Reveal>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full h-auto gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full h-auto gap-8 px-5">
         {projects.map((project) => (
           <div
             key={project.title}
