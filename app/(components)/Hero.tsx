@@ -18,7 +18,7 @@ const Hero = () => {
             <h3 className="text-xl font-source-serif-semibold  md:text-2xl lg:text-3xl">
               A Full-Stack Developer
             </h3>
-            <p className="font-source-serif text-gray-400 w-[45%] text-sm sm:text-md md:text-lg sm:w-[70%] md:w-[80%] lg:w-[100%]">
+            <p className="font-source-serif text-gray-400 w-[35%] text-sm sm:text-md md:text-lg sm:w-[50%] md:w-[80%] lg:w-[100%]">
               I&apos;m a student aspiring to be a software engineer, skilled in
               creating dynamic web applications. I love working on both
               front-end and back-end projects and I&apos;am excited about future
