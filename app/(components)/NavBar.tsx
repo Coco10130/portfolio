@@ -40,7 +40,7 @@ const NavBar = () => {
         </div>
 
         <div className="flex items-center justify-end w-full h-auto z-20">
-          <ul className="hidden flex-row text-md uppercase gap-3 cursor-pointer font-source-serif text-white md:flex">
+          <ul className="hidden flex-row text-md uppercase gap-6 cursor-pointer font-source-serif text-white md:flex">
             {navigations.map((navItem) => (
               <li key={navItem.title}>
                 <Link href={navItem.href}>{navItem.title}</Link>
