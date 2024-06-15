@@ -73,7 +73,7 @@ const About = () => {
           <div className="grid grid-cols-1 gap-12 place-content-center mx-5 sm:mx-10 md:px-20 lg:mx-12 lg:grid-cols-2">
             <div className="flex flex-col gap-7 font-source-serif text-center text-white lg:text-start">
               <p className="description">
-                Hello, I'm John Ric Tenepere, proudly representing Aguilar,
+                Hello, I&apos;m John Ric Tenepere, proudly representing Aguilar,
                 Pangasinan, as I navigate the vast expanse of academia. My
                 academic journey is a deep dive into the realm of backend
                 development, with Node.js serving as my guiding light.

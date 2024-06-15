@@ -12,7 +12,7 @@ const Footer = () => {
               Drop me a line
             </h3>
             <h3 className="text-lg text-white font-source-serif-bold mt-3 mb-6">
-              and let's create a cool and valuable project for you
+              and let&apos;s create a cool and valuable project for you
             </h3>
           </div>
 
