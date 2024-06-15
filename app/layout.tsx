@@ -1,8 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  weight: "500",
+  variable: "--font-sourceSerif",
+});
+
+const sourceSerifBold = Source_Serif_4({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-sourceSerifBold",
+});
+
+const sourceSerifSemiBold = Source_Serif_4({
+  subsets: ["latin"],
+  weight: "600",
+  variable: "--font-sourceSerifSemiBold",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${sourceSerif.variable} ${sourceSerifBold.variable} ${sourceSerifSemiBold.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

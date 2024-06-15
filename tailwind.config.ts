@@ -8,7 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+      fontFamily: {
+        'source-serif': ['var(--font-sourceSerif)'],
+        'source-serif-bold': ['var(--font-sourceSerifBold)'],
+        'source-serif-semibold': ['var(--font-sourceSerifSemiBold)'],
+      },
+
+      colors: {
+        "dirty-white": "F4F2F2"
+      }
     },
   },
   plugins: [],
