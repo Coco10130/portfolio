@@ -36,10 +36,7 @@ const NavBar = () => {
             ))}
           </ul>
           <div className="flex md:hidden">
-            <button
-              className="px-3 py-1 mr-1 sm:mr-5"
-              onClick={handleNavigationChange}
-            >
+            <button className="mr-2 sm:mr-5" onClick={handleNavigationChange}>
               <AnimatedHamburger />
             </button>
           </div>
@@ -113,7 +110,7 @@ const AnimatedHamburger = () => {
             x: "-50%",
             y: "-50%",
           }}
-          className="absolute h-1 w-10 bg-white"
+          className="absolute h-1 w-7 bg-white rounded-lg"
           variants={{
             open: {
               rotate: [0, 0, 45],
@@ -135,7 +132,7 @@ const AnimatedHamburger = () => {
             x: "-50%",
             y: "-50%",
           }}
-          className="absolute h-1 w-10 bg-white"
+          className="absolute h-1 w-7 bg-white rounded-lg"
           variants={{
             open: {
               rotate: [0, 0, -45],
@@ -150,12 +147,12 @@ const AnimatedHamburger = () => {
 
         <motion.span
           style={{
-            left: "calc(50% + 10px)",
+            left: "calc(50% + 4px)",
             bottom: "35%",
             x: "-50%",
             y: "50%",
           }}
-          className="absolute h-1 w-5 bg-white"
+          className="absolute h-1 w-5 bg-white rounded-lg"
           variants={{
             open: {
               rotate: [0, 0, 45],
@@ -164,7 +161,7 @@ const AnimatedHamburger = () => {
             },
             closed: {
               rotate: [45, 0, 0],
-              left: "calc(50% + 10px)",
+              left: "calc(50% + 4px)",
               bottom: ["50%", "50%", "35%"],
             },
           }}
