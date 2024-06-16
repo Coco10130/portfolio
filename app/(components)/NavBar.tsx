@@ -92,7 +92,7 @@ const AnimatedHamburger = () => {
 
   const handleNavigationChange = () => {
     navigation = active;
-    setActive((pv) => !pv);
+    setActive((p) => !p);
   };
 
   return (
