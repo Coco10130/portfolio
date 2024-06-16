@@ -64,7 +64,7 @@ const NavBar = () => {
                 : "absolute top-[6rem] left-[-110%] opacity-50 w-full h-auto px-5 py-5 bg-opacity-0 text-white bg-white duration-300"
             }
           >
-            <ul className="relative flex flex-row items-center justify-center w-full h-auto gap-5 font-source-serif text-sm sm:text-base sm:gap-8 ">
+            <ul className="relative flex flex-row items-center justify-center w-full h-auto gap-5 font-source-serif text-sm sm:text-base sm:gap-7 ">
               {navigations.map((navItem) => (
                 <li key={navItem.title}>
                   <button onClick={() => setShowNav(false)}>
