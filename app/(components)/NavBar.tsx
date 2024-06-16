@@ -3,14 +3,21 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, MotionConfig } from "framer-motion";
 
+let navigation = false;
+
 const NavBar = () => {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState<boolean>(true);
   const navigations = [
     { title: "Home", href: "#home" },
     { title: "About", href: "#about" },
     { title: "Projects", href: "#projects" },
     { title: "Contact", href: "#contact" },
   ];
+
+  const handleNavigationChange = () => {
+    navigation = showNav;
+    setShowNav((pv) => !pv);
+  };
 
   return (
     <>
@@ -31,7 +38,7 @@ const NavBar = () => {
           <div className="flex md:hidden">
             <button
               className="px-3 py-1 mr-1 sm:mr-5"
-              onClick={() => setShowNav((pv) => !pv)}
+              onClick={handleNavigationChange}
             >
               <AnimatedHamburger />
             </button>
@@ -40,13 +47,16 @@ const NavBar = () => {
       </nav>
       <motion.div
         initial={{ left: "-100%", opacity: 0 }}
-        animate={{ left: showNav ? "0%" : "-100%", opacity: showNav ? 1 : 0 }}
+        animate={{
+          left: navigation ? "0%" : "-100%",
+          opacity: navigation ? 1 : 0,
+        }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="absolute top-[7.4rem] left-0 w-full h-auto px-5 py-5 bg-opacity-90 text-white z-30 bg-white/20 md:hidden"
       >
         <motion.ul
           initial="closed"
-          animate={showNav ? "open" : "closed"}
+          animate={navigation ? "open" : "closed"}
           variants={{
             open: {
               opacity: 1,
@@ -66,7 +76,9 @@ const NavBar = () => {
                 closed: { opacity: 0, y: 0, x: -30 },
               }}
             >
-              <Link href={navItem.href}>{navItem.title}</Link>
+              <Link href={navItem.href} onClick={handleNavigationChange}>
+                {navItem.title}
+              </Link>
             </motion.li>
           ))}
         </motion.ul>
@@ -78,6 +90,11 @@ const NavBar = () => {
 const AnimatedHamburger = () => {
   const [active, setActive] = useState<boolean>(false);
 
+  const handleNavigationChange = () => {
+    navigation = active;
+    setActive((pv) => !pv);
+  };
+
   return (
     <MotionConfig
       transition={{
@@ -86,7 +103,7 @@ const AnimatedHamburger = () => {
       }}
     >
       <motion.div
-        onClick={() => setActive((pv) => !pv)}
+        onClick={handleNavigationChange}
         className="relative w-20 h-16 rounded-full transition-colors"
       >
         <motion.span
@@ -108,7 +125,7 @@ const AnimatedHamburger = () => {
             },
           }}
           initial="open"
-          animate={active ? "open" : "closed"}
+          animate={navigation ? "open" : "closed"}
         ></motion.span>
 
         <motion.span
@@ -128,7 +145,7 @@ const AnimatedHamburger = () => {
             },
           }}
           initial="open"
-          animate={active ? "open" : "closed"}
+          animate={navigation ? "open" : "closed"}
         ></motion.span>
 
         <motion.span
@@ -152,7 +169,7 @@ const AnimatedHamburger = () => {
             },
           }}
           initial="open"
-          animate={active ? "open" : "closed"}
+          animate={navigation ? "open" : "closed"}
         ></motion.span>
       </motion.div>
     </MotionConfig>
