@@ -5,7 +5,11 @@ import { motion, MotionConfig } from "framer-motion";
 
 let navigation = false;
 
-const NavBar = () => {
+interface Props {
+  darkMode: boolean;
+}
+
+const NavBar = ({ darkMode }: Props) => {
   const [showNav, setShowNav] = useState<boolean>(true);
   const navigations = [
     { title: "Home", href: "#home" },
@@ -21,14 +25,18 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="grid grid-cols-2 w-full h-auto px-6 py-6 shadow-lg md:px-8 lg:px-16 z-20">
+      <nav
+        className={`${
+          darkMode && "dark"
+        } grid grid-cols-2 w-full h-auto px-6 py-6 shadow-lg md:px-8 lg:px-16 z-20`}
+      >
         <div className="flex items-center justify-start gap-5 w-[150%] md:w-full">
-          <h3 className="text-md ml-5 uppercase font-bold text-white md:ml-12 md:text-xl">
+          <h3 className="text-md ml-5 uppercase font-bold text-neutral-900 dark:text-white md:ml-12 md:text-xl">
             John Ric Tenepere
           </h3>
         </div>
         <div className="flex items-center justify-end w-full h-auto">
-          <ul className="hidden flex-row text-md uppercase gap-6 cursor-pointer font-source-serif text-white md:flex">
+          <ul className="hidden flex-row text-md uppercase gap-6 cursor-pointer font-source-serif dark:text-white md:flex">
             {navigations.map((navItem) => (
               <li key={navItem.title}>
                 <Link href={navItem.href}>{navItem.title}</Link>
@@ -37,7 +45,7 @@ const NavBar = () => {
           </ul>
           <div className="flex md:hidden">
             <button className="mr-2 sm:mr-5" onClick={handleNavigationChange}>
-              <AnimatedHamburger />
+              <AnimatedHamburger darkMode={darkMode} />
             </button>
           </div>
         </div>
@@ -49,7 +57,7 @@ const NavBar = () => {
           opacity: navigation ? 1 : 0,
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="absolute top-[7.4rem] left-0 w-full h-auto px-5 py-5 bg-opacity-90 text-white z-30 bg-white/20 md:hidden"
+        className="absolute top-[7.4rem] left-0 w-full h-auto px-5 py-5 bg-opacity-90 border-2 border-black/40 dark:border-white/40 dark:text-white z-30 bg-black/20 dark:bg-white/20 md:hidden"
       >
         <motion.ul
           initial="closed"
@@ -84,7 +92,7 @@ const NavBar = () => {
   );
 };
 
-const AnimatedHamburger = () => {
+const AnimatedHamburger = ({ darkMode }: Props) => {
   const [active, setActive] = useState<boolean>(false);
 
   const handleNavigationChange = () => {
@@ -110,7 +118,7 @@ const AnimatedHamburger = () => {
             x: "-50%",
             y: "-50%",
           }}
-          className="absolute h-1 w-7 bg-white rounded-lg"
+          className="absolute h-1 w-7 bg-black dark:bg-white rounded-lg"
           variants={{
             open: {
               rotate: [0, 0, 45],
@@ -132,7 +140,7 @@ const AnimatedHamburger = () => {
             x: "-50%",
             y: "-50%",
           }}
-          className="absolute h-1 w-7 bg-white rounded-lg"
+          className="absolute h-1 w-7 bg-black dark:bg-white rounded-lg"
           variants={{
             open: {
               rotate: [0, 0, -45],
@@ -152,7 +160,7 @@ const AnimatedHamburger = () => {
             x: "-50%",
             y: "50%",
           }}
-          className="absolute h-1 w-5 bg-white rounded-lg"
+          className="absolute h-1 w-5 bg-black dark:bg-white rounded-lg"
           variants={{
             open: {
               rotate: [0, 0, 45],

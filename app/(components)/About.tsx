@@ -1,77 +1,86 @@
 "use client";
 import { useState } from "react";
 import Reveal from "./Reveal";
+import classNames from "classnames";
 
-const About = () => {
+interface Props {
+  darkMode: boolean;
+}
+
+const About = ({ darkMode }: Props) => {
   const [hoveredTech, setHoveredTech] = useState<string>("");
 
   const technologies = [
     {
       tech: "JavaScript",
-      color: "#f0db4f",
+      color: "bg-[#f0db4f]",
     },
     {
       tech: "TypeScript",
-      color: "#007acc",
+      color: "bg-[#007acc]",
     },
     {
       tech: "HTML",
-      color: "#e34c26",
+      color: "bg-[#e34c26]",
     },
     {
       tech: "NodeJs",
-      color: "#68a063",
+      color: "bg-[#68a063]",
     },
     {
       tech: "React",
-      color: "#1c84bc",
+      color: "bg-[#1c84bc]",
     },
     {
       tech: "CSS",
-      color: "#264de4",
+      color: "bg-[#264de4]",
     },
     {
       tech: "MongoDB",
-      color: "#0cd45b",
+      color: "bg-[#0cd45b]",
     },
     {
       tech: "MySQL",
-      color: "#00758f",
+      color: "bg-[#00758f]",
     },
     {
       tech: "Tailwind",
-      color: "#5454ec",
+      color: "bg-[#5454ec]",
     },
     {
       tech: "Bootstrap",
-      color: "#563d7c",
+      color: "bg-[#563d7c]",
     },
     {
       tech: "Express",
-      color: "#303030",
+      color: "bg-[#303030]",
     },
     {
       tech: "Git",
-      color: "#f34f29",
+      color: "bg-[#f34f29]",
     },
     {
       tech: "NextJS",
-      color: "#45ce05",
+      color: "bg-[#45ce05]",
     },
   ];
 
   return (
     <>
       <Reveal>
-        <div className="flex flex-col items-center mb-32">
+        <div
+          className={`${
+            darkMode && "dark"
+          } flex flex-col items-center mt-12 mb-32`}
+        >
           <div>
-            <h1 className="text-white font-source-serif-bold text-3xl mb-12 sm:text-4xl md:text-5xl md:mb-20">
+            <h1 className="dark:text-white font-source-serif-bold text-3xl mb-12 sm:text-4xl md:text-5xl md:mb-20">
               About
             </h1>
           </div>
 
           <div className="grid grid-cols-1 gap-12 place-content-center mx-5 sm:mx-10 md:px-20 lg:mx-12 lg:grid-cols-2">
-            <div className="flex flex-col gap-7 font-source-serif text-center text-white lg:text-start">
+            <div className="flex flex-col gap-7 font-source-serif text-center dark:text-white lg:text-start">
               <p className="description">
                 Hello, I&apos;m John Ric Tenepere, proudly representing Aguilar,
                 Pangasinan, as I navigate the vast expanse of academia. My
@@ -92,7 +101,7 @@ const About = () => {
             </div>
 
             <div className="flex flex-col items-center px-5 sm:px-10 md:px-16 lg:px-20">
-              <h3 className="font-source-serif-semibold text-2xl text-white mb-12">
+              <h3 className="font-source-serif-semibold text-2xl dark:text-white mb-12">
                 Technologies I use
               </h3>
 
@@ -101,11 +110,14 @@ const About = () => {
                   {technologies.map((tech) => (
                     <div
                       key={tech.tech}
-                      className="text-white px-4 py-2 rounded-full shadow-md text-sm hover:scale-x-110 duration-300 cursor-pointer font-source-serif lg:text-base"
-                      style={{
-                        backgroundColor:
-                          hoveredTech === tech.tech ? tech.color : "gray",
-                      }}
+                      className={classNames(
+                        "dark:text-white px-4 py-2 rounded-full shadow-md text-sm hover:scale-x-110 duration-300 cursor-pointer font-source-serif lg:text-base",
+                        {
+                          [tech.color]: hoveredTech === tech.tech,
+                          "bg-gray-200 dark:bg-gray-500":
+                            hoveredTech !== tech.tech,
+                        }
+                      )}
                       onMouseEnter={() => setHoveredTech(tech.tech)}
                       onMouseLeave={() => setHoveredTech("")}
                     >

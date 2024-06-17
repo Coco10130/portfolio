@@ -1,9 +1,17 @@
 "use client";
 import anime from "animejs";
 
-const WaterDropGrid = () => {
+interface Props {
+  darkMode: boolean;
+}
+
+const WaterDropGrid = ({ darkMode }: Props) => {
   return (
-    <div className="relative grid h-full place-content-center px-3">
+    <div
+      className={`${
+        darkMode && "dark"
+      } relative grid h-full place-content-center px-3`}
+    >
       <DotGrid />
     </div>
   );
@@ -43,12 +51,12 @@ const DotGrid = () => {
       dots.push(
         <div
           onClick={handleDotClick}
-          className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-slate-600"
+          className="group cursor-crosshair rounded-full p-2 transition-colors "
           data-index={index}
           key={`${i}-${j}`}
         >
           <div
-            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-600 group-hover:to-white"
+            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-200 dark:from-slate-600 dark:to-slate-400 opacity-50"
             data-index={index}
           />
         </div>

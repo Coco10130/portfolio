@@ -2,16 +2,24 @@ import React from "react";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Reveal from "./Reveal";
 
-const Footer = () => {
+interface Props {
+  darkMode: boolean;
+}
+
+const Footer = ({ darkMode }: Props) => {
   return (
     <>
       <Reveal>
-        <div className="flex flex-col justify-center items-center w-full h-auto py-12">
+        <div
+          className={`${
+            darkMode && "dark"
+          } flex flex-col justify-center items-center w-full h-auto py-12`}
+        >
           <div className="text-center">
-            <h3 className="text-lg text-white font-source-serif-bold">
+            <h3 className="text-lg dark:text-white font-source-serif-bold">
               Drop me a line
             </h3>
-            <h3 className="text-lg text-white font-source-serif-bold mt-3 mb-6">
+            <h3 className="text-lg dark:text-white font-source-serif-bold mt-3 mb-6">
               and let&apos;s create a cool and valuable project for you
             </h3>
           </div>
@@ -22,26 +30,26 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebook size={50} color="white" />
+              <FaFacebook size={50} color={darkMode ? "white" : "black"} />
             </a>
             <a
               href="https://ph.linkedin.com/in/cocolangot?original_referer=https%3A%2F%2Fwww.google.com%2F"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin size={50} color="white" />
+              <FaLinkedin size={50} color={darkMode ? "white" : "black"} />
             </a>
             <a
               href="https://www.instagram.com/jhnrc13/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram size={50} color="white" />
+              <FaInstagram size={50} color={darkMode ? "white" : "black"} />
             </a>
           </div>
 
           <div className="pt-12">
-            <p className="text-white text-lg font-source-serif">
+            <p className="dark:text-white text-lg font-source-serif">
               All rights reserved
             </p>
           </div>

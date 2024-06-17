@@ -1,7 +1,11 @@
 import React from "react";
 import Reveal from "./Reveal";
 
-const Projects = () => {
+interface Props {
+  darkMode: boolean;
+}
+
+const Projects = ({ darkMode }: Props) => {
   const projects = [
     {
       image: "/images/concordia.png",
@@ -43,16 +47,16 @@ const Projects = () => {
   ];
 
   return (
-    <div className="mb-32">
+    <div className={`${darkMode && "dark"} mb-32`}>
       <Reveal>
         <div className="flex flex-col items-center">
           <div className="mb-20">
-            <h1 className="text-white text-center font-source-serif-bold text-3xl  sm:text-4xl md:text-5xl">
+            <h1 className="dark:text-white text-center font-source-serif-bold text-3xl  sm:text-4xl md:text-5xl">
               My Works
             </h1>
           </div>
           <div>
-            <ProjectCards projects={projects} />
+            <ProjectCards projects={projects} darkMode={darkMode} />
           </div>
         </div>
       </Reveal>
@@ -69,16 +73,17 @@ interface CardProps {
 
 interface ProjectCardsProps {
   projects: CardProps[];
+  darkMode: boolean;
 }
 
-const ProjectCards = ({ projects }: ProjectCardsProps) => {
+const ProjectCards = ({ projects, darkMode }: ProjectCardsProps) => {
   return (
     <Reveal>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full h-auto gap-8 px-5">
         {projects.map((project) => (
           <div
             key={project.title}
-            className="max-w-[26rem] w-full h-full p-4 bg-gray-800 rounded-lg hover:scale-105 duration-300 ease"
+            className="max-w-[26rem] w-full h-full p-4 bg-gray-300 dark:bg-gray-800 rounded-lg hover:scale-105 duration-300 ease"
           >
             <div>
               <img
@@ -88,19 +93,19 @@ const ProjectCards = ({ projects }: ProjectCardsProps) => {
               />
             </div>
             <div className="flex flex-col mt-4">
-              <h1 className="text-2xl text-white font-source-serif-bold mb-2">
+              <h1 className="text-2xl dark:text-white font-source-serif-bold mb-2">
                 {project.title}
               </h1>
-              <p className="text-sm text-gray-400 mb-4">
+              <p className="text-sm text-gray-800 dark:text-gray-400 mb-4">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.techs.map((tech) => (
                   <div
                     key={tech}
-                    className="px-3 py-1 bg-gray-600 rounded-full"
+                    className="px-3 py-1 bg-gray-200 dark:bg-gray-600 rounded-full"
                   >
-                    <p className="text-white text-xs font-source-serif">
+                    <p className="dark:text-white text-xs font-source-serif">
                       {tech}
                     </p>
                   </div>

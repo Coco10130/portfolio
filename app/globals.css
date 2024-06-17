@@ -8,6 +8,10 @@
  }
 }
 
+* {
+    @apply transition-colors duration-200
+}
+
 html{
     scroll-behavior: smooth;
 }
