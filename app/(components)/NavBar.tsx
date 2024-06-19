@@ -28,7 +28,7 @@ const NavBar = ({ darkMode }: Props) => {
       <nav
         className={`${
           darkMode && "dark"
-        } grid grid-cols-2 w-full h-auto px-6 py-6 shadow-lg md:px-8 lg:px-16 z-20`}
+        } grid fixed grid-cols-2 w-full h-auto px-6 py-3 shadow-lg md:px-8 md:py-6 lg:px-16 z-20 bg-white dark:bg-black`}
       >
         <div className="flex items-center justify-start gap-5 w-[150%] md:w-full">
           <h3 className="text-md ml-5 uppercase font-bold text-neutral-900 dark:text-white md:ml-12 md:text-xl">
@@ -36,10 +36,10 @@ const NavBar = ({ darkMode }: Props) => {
           </h3>
         </div>
         <div className="flex items-center justify-end w-full h-auto">
-          <ul className="hidden flex-row text-md uppercase gap-6 cursor-pointer font-source-serif dark:text-white md:flex">
+          <ul className="hidden flex-row gap-6 cursor-pointer font-source-serif dark:text-white md:flex">
             {navigations.map((navItem) => (
               <li key={navItem.title}>
-                <Link href={navItem.href}>{navItem.title}</Link>
+                <FlipLink href={navItem.href}>{navItem.title}</FlipLink>
               </li>
             ))}
           </ul>
@@ -57,7 +57,7 @@ const NavBar = ({ darkMode }: Props) => {
           opacity: navigation ? 1 : 0,
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="absolute top-[7.4rem] left-0 w-full h-auto px-5 py-5 bg-opacity-90 border-2 border-black/40 dark:border-white/40 dark:text-white z-30 bg-black/20 dark:bg-white/20 md:hidden"
+        className="fixed top-[5.4rem] left-0 w-full h-auto px-5 py-5 bg-opacity-90 border-2 border-white/40 dark:border-white/40 dark:text-white z-20 bg-white dark:bg-black md:hidden"
       >
         <motion.ul
           initial="closed"
@@ -178,6 +178,79 @@ const AnimatedHamburger = ({ darkMode }: Props) => {
         ></motion.span>
       </motion.div>
     </MotionConfig>
+  );
+};
+
+interface LinkProps {
+  children: string;
+  href: string;
+}
+
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
+const FlipLink = ({ children, href }: LinkProps) => {
+  return (
+    <motion.a
+      className="relative block text-md uppercase overflow-hidden whitespace-nowrap"
+      href={href}
+      initial="initial"
+      whileHover="hover"
+      style={{
+        lineHeight: 0.75,
+      }}
+    >
+      <div>
+        {children.split("").map((l, i) => {
+          return (
+            <motion.span
+              variants={{
+                initial: {
+                  y: 0,
+                },
+                hover: {
+                  y: "-100%",
+                },
+              }}
+              key={i}
+              className="inline-block"
+              transition={{
+                delay: STAGGER * i,
+                easing: "easeInOut",
+                duration: DURATION,
+              }}
+            >
+              {l}
+            </motion.span>
+          );
+        })}
+      </div>
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => {
+          return (
+            <motion.span
+              variants={{
+                initial: {
+                  y: "100%",
+                },
+                hover: {
+                  y: 0,
+                },
+              }}
+              key={i}
+              className="inline-block"
+              transition={{
+                delay: STAGGER * i,
+                easing: "easeInOut",
+                duration: DURATION,
+              }}
+            >
+              {l}
+            </motion.span>
+          );
+        })}
+      </div>
+    </motion.a>
   );
 };
 

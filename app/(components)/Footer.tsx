@@ -15,11 +15,11 @@ const Footer = ({ darkMode }: Props) => {
             darkMode && "dark"
           } flex flex-col justify-center items-center w-full h-auto py-12`}
         >
-          <div className="text-center">
-            <h3 className="text-lg dark:text-white font-source-serif-bold">
+          <div className="text-center px-3">
+            <h3 className="text-base md:text-lg dark:text-white font-source-serif-bold">
               Drop me a line
             </h3>
-            <h3 className="text-lg dark:text-white font-source-serif-bold mt-3 mb-6">
+            <h3 className="text-base md:text-lg dark:text-white font-source-serif-bold mt-3 mb-6">
               and let&apos;s create a cool and valuable project for you
             </h3>
           </div>
@@ -50,7 +50,7 @@ const Footer = ({ darkMode }: Props) => {
 
           <div className="pt-12">
             <p className="dark:text-white text-lg font-source-serif">
-              All rights reserved
+              © All rights reserved 2024
             </p>
           </div>
         </div>

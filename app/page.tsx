@@ -43,7 +43,7 @@ export default function Home() {
         <Footer darkMode={darkMode} />
 
         <motion.button
-          className="fixed p-4 rounded-full bottom-5 right-5 text-white bg-black dark:bg-neutral-300 dark:text-neutral-900 sm:bottom-10 sm:right-10 md:bottom-12 md:right-12 flex items-center justify-center"
+          className="fixed p-4 rounded-full bottom-5 right-5 text-white bg-black dark:bg-white backdrop:dark:text-neutral-900 sm:bottom-10 sm:right-10 md:bottom-12 md:right-12 flex items-center justify-center"
           onClick={toggelDarkMode}
         >
           <AnimatePresence mode="popLayout">
