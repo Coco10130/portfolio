@@ -10,12 +10,14 @@ const Hero = ({ darkMode }: Props) => {
   return (
     <>
       <Reveal>
-        <div className={`${darkMode && "dark"} w-full h-[100vh] px-20 py-24`}>
+        <div
+          className={`${darkMode && "dark"} w-full h-auto px-20 pt-32 mb-28`}
+        >
           <div className="relative ml-96 px-12">
             <WaterDropGrid darkMode={darkMode} />
           </div>
 
-          <div className="absolute top-[12rem] left-12 flex flex-col gap-6 w-[45rem] md:left-16 lg:left-[13rem]">
+          <div className="absolute top-[15rem] left-12 flex flex-col gap-6 w-[45rem] md:left-16 lg:left-[12rem]">
             <h1 className="text-4xl dark:text-white font-source-serif sm:text-5xl md:text-6xl lg:text-7xl">
               Hi, I&apos;m John Ric
             </h1>

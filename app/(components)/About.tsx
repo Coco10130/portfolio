@@ -63,6 +63,10 @@ const About = ({ darkMode }: Props) => {
       tech: "NextJS",
       color: "bg-[#45ce05]",
     },
+    {
+      tech: "Framer Motion",
+      color: "bg-[#1D3557]",
+    },
   ];
 
   return (
@@ -111,7 +115,7 @@ const About = ({ darkMode }: Props) => {
                     <div
                       key={tech.tech}
                       className={classNames(
-                        "dark:text-white px-4 py-2 rounded-full shadow-md text-sm hover:scale-x-110 duration-300 cursor-pointer font-source-serif lg:text-base",
+                        "dark:text-white px-4 py-2 rounded-full shadow-md text-sm hover:scale-x-110 duration-300 cursor-pointer font-source-serif lg:text-base hover:text-white",
                         {
                           [tech.color]: hoveredTech === tech.tech,
                           "bg-gray-200 dark:bg-gray-500":

@@ -197,7 +197,7 @@ const FlipLink = ({ children, href }: LinkProps) => {
       initial="initial"
       whileHover="hover"
       style={{
-        lineHeight: 0.75,
+        lineHeight: 0.9,
       }}
     >
       <div>

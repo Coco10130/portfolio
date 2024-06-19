@@ -36,13 +36,13 @@ const Projects = ({ darkMode }: Props) => {
       image: "/images/abstract-clone.png",
       title: "Abstract (Clone)",
       description: "Clone of the Abstract website.",
-      techs: ["NextJS", "TypeScript", "TailwindCSS"],
+      techs: ["NextJS", "TypeScript", "TailwindCSS", "Framer Motion"],
     },
     {
       image: "/images/ableton-clone.png",
       title: "Ableton (Clone)",
       description: "Clone of the Ableton website.",
-      techs: ["NextJS", "TypeScript", "TailwindCSS"],
+      techs: ["NextJS", "TypeScript", "TailwindCSS", "Framer Motion"],
     },
   ];
 
