@@ -18,7 +18,15 @@ const Projects = ({ darkMode }: Props) => {
       image: "/images/concordia-clone.png",
       title: "Concordia Portum (Clone)",
       description: "Clone of Concordia Protum.",
-      techs: ["React", "Bootstrap", "CSS", "NodeJS", "Express", "MongoDB"],
+      techs: [
+        "React",
+        "Bootstrap",
+        "CSS",
+        "Tailwind",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+      ],
     },
     {
       image: "/images/note.png",
@@ -56,7 +64,7 @@ const Projects = ({ darkMode }: Props) => {
             </h1>
           </div>
           <div>
-            <ProjectCards projects={projects} darkMode={darkMode} />
+            <ProjectCards projects={projects} />
           </div>
         </div>
       </Reveal>
@@ -73,17 +81,16 @@ interface CardProps {
 
 interface ProjectCardsProps {
   projects: CardProps[];
-  darkMode: boolean;
 }
 
-const ProjectCards = ({ projects, darkMode }: ProjectCardsProps) => {
+const ProjectCards = ({ projects }: ProjectCardsProps) => {
   return (
     <Reveal>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full h-auto gap-8 px-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full h-auto gap-8 px-5 py-8">
         {projects.map((project) => (
           <div
             key={project.title}
-            className="max-w-[26rem] w-full h-full p-4 bg-gray-300 dark:bg-gray-800 rounded-lg hover:scale-105 duration-300 ease"
+            className="max-w-[26rem] w-full h-full p-4 bg-gray-300 dark:bg-gray-800 rounded-lg hover:scale-110 duration-300 ease"
           >
             <div>
               <img

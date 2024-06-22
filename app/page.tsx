@@ -8,7 +8,6 @@ import NavBar from "./(components)/NavBar";
 import Projects from "./(components)/Projects";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
-import { exit } from "process";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -23,7 +22,7 @@ export default function Home() {
 
   return (
     <div className={`${darkMode && "dark"}`}>
-      <div className="relative dark:bg-neutral-900 bg-white w-full h-auto">
+      <div className="relative bg-neutral-200 dark:bg-neutral-900 w-full h-auto">
         <NavBar darkMode={darkMode} />
         <div id="home">
           <Hero darkMode={darkMode} />

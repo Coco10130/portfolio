@@ -28,7 +28,7 @@ const NavBar = ({ darkMode }: Props) => {
       <nav
         className={`${
           darkMode && "dark"
-        } grid fixed grid-cols-2 w-full h-auto px-6 py-3 shadow-lg md:px-8 md:py-6 lg:px-16 z-20 bg-white dark:bg-black`}
+        } grid fixed grid-cols-2 w-full h-auto px-6 py-3 shadow-lg md:px-8 md:py-6 lg:px-16 z-20 bg-neutral-200 dark:bg-black`}
       >
         <div className="flex items-center justify-start gap-5 w-[150%] md:w-full">
           <h3 className="text-md ml-5 uppercase font-bold text-neutral-900 dark:text-white md:ml-12 md:text-xl">
@@ -45,7 +45,7 @@ const NavBar = ({ darkMode }: Props) => {
           </ul>
           <div className="flex md:hidden">
             <button className="mr-2 sm:mr-5" onClick={handleNavigationChange}>
-              <AnimatedHamburger darkMode={darkMode} />
+              <AnimatedHamburger />
             </button>
           </div>
         </div>
@@ -92,7 +92,7 @@ const NavBar = ({ darkMode }: Props) => {
   );
 };
 
-const AnimatedHamburger = ({ darkMode }: Props) => {
+const AnimatedHamburger = () => {
   const [active, setActive] = useState<boolean>(false);
 
   const handleNavigationChange = () => {

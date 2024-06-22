@@ -30,7 +30,7 @@ const sourceSerifItalic = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "John Ric Tenepere",
+  title: "John Ric",
   description: "John Ric Tenepere Portfolio",
 };
 

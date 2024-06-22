@@ -110,7 +110,7 @@ const About = ({ darkMode }: Props) => {
               </h3>
 
               <Reveal>
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex flex-wrap justify-center gap-4 py-4">
                   {technologies.map((tech) => (
                     <div
                       key={tech.tech}
