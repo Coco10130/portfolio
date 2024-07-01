@@ -75,7 +75,7 @@ const About = ({ darkMode }: Props) => {
         <div
           className={`${
             darkMode && "dark"
-          } flex flex-col items-center mt-12 mb-32`}
+          } flex flex-col items-center mt-12 mb-32 pt-16`}
         >
           <div>
             <h1 className="dark:text-white font-source-serif-bold text-3xl mb-12 sm:text-4xl md:text-5xl md:mb-20">

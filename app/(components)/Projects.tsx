@@ -55,7 +55,7 @@ const Projects = ({ darkMode }: Props) => {
   ];
 
   return (
-    <div className={`${darkMode && "dark"} mb-32`}>
+    <div className={`${darkMode && "dark"} mb-32 pt-24`}>
       <Reveal>
         <div className="flex flex-col items-center">
           <div className="mb-20">
