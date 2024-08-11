@@ -22,7 +22,7 @@ const Hero = ({ darkMode }: Props) => {
               Hi, I&apos;m John Ric
             </h1>
             <h3 className="text-xl dark:text-white font-source-serif-semibold  md:text-2xl lg:text-3xl">
-              A Full-Stack Developer
+              A Web Developer
             </h3>
             <p className="font-source-serif text-slate-600 dark:text-gray-300 w-[38%] text-sm sm:text-md md:text-lg sm:w-[50%] md:w-[80%] lg:w-[100%]">
               I&apos;m a student aspiring to be a software engineer, skilled in
